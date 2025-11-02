@@ -1,0 +1,8 @@
+spring:
+  application:
+    name: basketballbot
+
+cron:
+#  megastroy: 0 12 * * 0,4
+  megastroy: 0 0/30 * * * ?
+
