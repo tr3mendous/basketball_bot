@@ -1,10 +1,10 @@
-package com.baketballbot.baskeballbot;
+package com.basketballbot;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class BasketballbotApplicationTests {
+class BasketballBotApplicationTests {
 
 	@Test
 	void contextLoads() {
