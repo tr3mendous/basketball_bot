@@ -3,18 +3,23 @@ spring:
     name: basketballbot
 
 cron:
-  megastroy-poll: ${MEGASTROY_POLL:-}
-  megastroy-unpin: ${MEGASTROY_UNPIN:-}
-  sber-poll: ${SBER_POLL:-}
-  sber-unpin: ${SBER_UNPIN:-}
-  ping: ${PING:-}
-  google-ping: ${GOOGLE_PING:-}
+#  На Яндекс Облаке время в UTC
+  megastroy-poll: 0 0 9 * * 0,3
+  megastroy-unpin: 0 0 17 * * 1,4
+  sber-poll: 0 0 9 * * 2
+  sber-unpin: 0 0 16 * * 3
+  game-poll: 0 0 9 * * *
+  unpin-game-poll: 0 0 17 * * *
 
 bot:
-  megastroy-chat-id: ${MEGASTROY_CHAT_ID:-1001597722413} #-1003125449732
-  sber-chat-id: ${SBER_CHAT_ID:-1004506613298} #-1003125449732
-  token: ${TOKEN}
-  url: ${URL:https://basketball-bot-1kir.onrender.com}
+  user-name: test_basketball_bot
+  megastroy-chat-id: -1003125449732
+  megastroy-schedule-url: https://reg.infobasket.su/Comp/GetCalendar/?comps=110960&format=json
+  megastroy-table-url: https://reg.infobasket.su/Widget/CompTeamResults/110970?format=json
+  sber-chat-id: -1003125449732
+  sber-schedule-url: https://reg.infobasket.su/Comp/GetCalendar/?comps=110958&format=json
+  sber-table-url: https://reg.infobasket.su/Widget/CompTeamResults/110975?format=json
+  token: 8514484184:AAHzuiCj3-6xIHxDfy1X5PblbcMzxskm8sk
 
-server:
-  port: ${PORT:8080}
+#server:
+#  port: ${PORT:8080}
