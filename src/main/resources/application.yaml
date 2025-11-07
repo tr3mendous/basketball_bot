@@ -3,17 +3,17 @@ spring:
     name: basketballbot
 
 cron:
-  megastroy-poll: ${MEGASTROY_POLL:-}
-  megastroy-unpin: ${MEGASTROY_UNPIN:-}
-  sber-poll: ${SBER_POLL:-}
-  sber-unpin: ${SBER_UNPIN:-}
-  ping: ${PING:-}
-  google-ping: ${GOOGLE_PING:-}
+  megastroy-poll: ${MEGASTROY_POLL:0 0 9 * * 0,3}
+  megastroy-unpin: ${MEGASTROY_UNPIN:0 0 17 * * 1,4}
+  sber-poll: ${SBER_POLL:0 0 9 * * 2}
+  sber-unpin: ${SBER_UNPIN:0 0 16 * * 3}
+  ping: ${PING:0 */10 * * * *}
+  google-ping: ${GOOGLE_PING:0 */3 * * * *}
 
 bot:
   megastroy-chat-id: ${MEGASTROY_CHAT_ID:-1001597722413} #-1003125449732
   sber-chat-id: ${SBER_CHAT_ID:-1004506613298} #-1003125449732
-  token: ${TOKEN}
+  token: ${TOKEN:8472616578:AAGO2LsSz23DY-pITP6DeVMh7dcN3kTJJDc}
   url: ${URL:https://basketball-bot-1kir.onrender.com}
 
 server:

@@ -3,8 +3,6 @@ package com.basketballbot;
 import lombok.*;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.HttpStatusCode;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 import org.telegram.telegrambots.bots.TelegramLongPollingBot;
@@ -25,6 +23,7 @@ import static com.basketballbot.Team.MEGASTROY;
 import static com.basketballbot.Team.SBER;
 import static java.lang.String.format;
 import static java.time.DayOfWeek.MONDAY;
+import static org.springframework.http.HttpStatus.OK;
 
 @Component
 @Setter
@@ -115,7 +114,7 @@ public class Bot extends TelegramLongPollingBot {
                 .build();
         try {
             var response = client.send(request, HttpResponse.BodyHandlers.ofString());
-            if (response.statusCode() != HttpStatus.OK.value()) {
+            if (response.statusCode() != OK.value()) {
                 throw new RuntimeException();
             }
         } catch (Exception e) {
