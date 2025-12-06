@@ -145,7 +145,6 @@ public class ResponseHandler {
         var photo = SendPhoto.builder()
                 .chatId(chatId)
                 .photo(file)
-                .disableNotification(true)
                 .build();
         bot.execute(photo);
     }
@@ -155,7 +154,6 @@ public class ResponseHandler {
                 .chatId(chatId)
                 .text(text)
                 .disableNotification(true)
-                .parseMode("HTML")
                 .build();
     }
 
